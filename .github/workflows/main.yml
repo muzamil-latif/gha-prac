@@ -1,27 +1,32 @@
-name: Frontend CI Practice
+name: Frontend CI Pipeline
 
 on: push
 
 jobs:
-  test-project:
+  validate-project:
     runs-on: ubuntu-latest
 
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
 
-      - name: Display project files
-        run: ls
-
-      - name: Display current directory
-        run: pwd
-
-      - name: Read HTML file
-        run: cat code./index.html
-
       - name: Validate HTML title
-        run: grep "<title>" code./index.html
+        run: grep "<title>" code/index.html
 
+      - name: Validation success
+        run: echo "HTML validation passed"
 
-      - name: Success message
-        run: echo "Workflow completed successfully"
+  build-project:
+    needs: validate-project
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Simulate build process
+        run: echo "Building frontend project"
+
+      - name: Build completed
+        run: echo "Build successful"
