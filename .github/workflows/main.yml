@@ -20,7 +20,7 @@ jobs:
         run: cat code./index.html
 
       - name: Validate HTML title
-        run: grep "<title>" code/index.html
+        run: grep "<title>" code./index.html
 
 
       - name: Success message
