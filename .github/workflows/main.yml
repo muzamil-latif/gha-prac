@@ -17,7 +17,7 @@ jobs:
         run: pwd
 
       - name: Read HTML file
-        run: cat index.html
+        run: cat code/index.html
 
       - name: Success message
         run: echo "Workflow completed successfully"
