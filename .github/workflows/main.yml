@@ -1,12 +1,23 @@
-name: Frontend CI practice
-on: push
-jobs:
-    test-project:
-        runs-on: ubuntu-latest
+name: Frontend CI Practice
 
-        steps:
-            - name: get repo code
-              uses: actions/checkout@v4
-            - name: print confo mssg
-              run: echo "running done"
-              
+on: push
+
+jobs:
+  test-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v4
+
+      - name: Display project files
+        run: ls
+
+      - name: Display current directory
+        run: pwd
+
+      - name: Read HTML file
+        run: cat index.html
+
+      - name: Success message
+        run: echo "Workflow completed successfully"
