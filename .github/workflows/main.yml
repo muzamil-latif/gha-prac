@@ -1,0 +1,12 @@
+name: Frontend CI practice
+on: push
+jobs:
+    test-project:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: get repo code
+              uses: actions/checkout@v4
+            - name: print confo mssg
+              run: echo "running done"
+              
